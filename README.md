@@ -131,12 +131,10 @@ Install PVC to test storage function
 you should see it bind to array 
 
 ```
-k get pvc
+kubectl get pvc
 NAME              STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 smoketest-claim   Bound    pvc-d8d61813-9c88-48ce-955a-b4f448ba89e9   10Gi       RWX            pure-file      13s
 ```
-
-
 
 
 ### Konvoy Step 2 add on components
