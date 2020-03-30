@@ -55,9 +55,8 @@ Add the Pure storage repo
 ```
 helm repo add pure https://purestorage.github.io/helm-charts
 ```
-```
 Update the repo
-```
+
 ```
 helm repo update
 ```
@@ -66,7 +65,8 @@ Clone the help chart
 git clone https://github.com/purestorage/helm-charts.git
 ```
 
-*EXAMPLES
+Edit the values file with your array information
+
 ```
 arrays:
   FlashArrays:
@@ -91,9 +91,8 @@ arrays:
         rack: "6a"
 ```
 
-Edit the Values file with your ARRAY variables
 
-Instal PSO
+ Install PSO
 ```
 helm install --name pure-storage-driver pure/pure-csi --namespace pureflash -f ../values.yaml
 ```
@@ -104,13 +103,13 @@ Set the default storage class to pure-file
 kubectl patch storageclass pure-file -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
 
-```
+
 Smoke test that storage is provisined from array
-```
 
 Clone repo
-https://github.com/opslounge/PSO.git
-
+```
+git clone https://github.com/opslounge/PSO.git
+```
 Deploy Wordpress
 Observe binding applications
 
