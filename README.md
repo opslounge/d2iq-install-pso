@@ -15,13 +15,15 @@ storage on Pure Flash Blade
 
 What things you need to install the software and how to install them
 
-```
-3 master nodes Centos
-4 worker nodes Centos
-1 Deployment Node Centos
-1 Flash Blade
+Systems needed for K8s on D2iq for Jupyter as a Service
+Ideally you will have your Flash Blade data VIPS on a dedicated storage VLAN if possible
 
-```
+
+- 1 deployment node (used for setup cluster)
+- 3 master nodes Centos  Access to Flashblade API management VLAN 
+- 4 worker nodes Centos  Access to Seperate Storage VLAN 
+- Pure Flash Blade 
+
 
 ### Installing
 
@@ -32,8 +34,9 @@ Start with 7 nodes connected to flashblade
 4 for storage related calls
 
 you can use the following playbooks to prep each host. 
-https://github.com/opslounge/ansibleplaybooks...
-
+```
+git clone https://github.com/opslounge/centosprep.git
+```
 
 ### Installing Flash Blade system
 
