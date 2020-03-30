@@ -77,7 +77,7 @@ Update the repo
 ```
 helm repo update
 ```
-Clone the help chart
+Clone the helm chart
 ```
 git clone https://github.com/purestorage/helm-charts.git
 ```
@@ -116,20 +116,17 @@ helm install --name pure-storage-driver pure/pure-csi --namespace pureflash -f .
 
 
 Set the default storage class to pure-file
+
 ```
 kubectl patch storageclass pure-file -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
+### Pure smoketest
+Validate storage provisioning is working by using the pure-smoketest
 
-
-Smoke test that storage is provisined from array
-
-Clone repo
+Clone smoketest repo
 ```
-git clone https://github.com/opslounge/PSO.git
+https://github.com/opslounge/pure-smoketest.git
 ```
-Deploy Wordpress
-Observe binding applications
-
 
 ### Konvoy Step 2 add on components
 
@@ -149,6 +146,7 @@ Set values to true before running konvoy up
     - name: prometheusadapter
       enabled: true
 ```
+
 
 ### Deploy Jupyterhub
 
