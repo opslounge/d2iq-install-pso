@@ -70,11 +70,15 @@ Edit the Values file with your ARRAY variables
 sample file here
 
 Instal PSO
+```
 helm install --name pure-storage-driver pure/pure-csi --namespace pureflash -f ../values.yaml
+```
+
 
 Set the default storage class to pure-file
+```
 kubectl patch storageclass pure-file -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
-
+```
 
 ```
 Smoke test that storage is provisined from array
