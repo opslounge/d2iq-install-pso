@@ -37,10 +37,8 @@ you can use the following playbooks to prep each host.
 https://github.com/opslounge/ansibleplaybooks...
 
 
+####Installing Flash Blade system
 
-```
-Installing Flash Blade system
-```
 
 Connect your Flashblade using these best practices
 https://support.purestorage.com/linktopractices
