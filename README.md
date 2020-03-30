@@ -147,41 +147,11 @@ you can follow the instructions in this URL to install Jupyterhub on k8s
 ```
 https://github.com/opslounge/jupyterhub
 ```
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
 ```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-
 
 ## Authors
 
-* **Andy Parsons** - *Initial work* - [opslounge](https://github.com/opslounge)
+* **Andy Parsons** - - [opslounge](https://github.com/opslounge)
 
 
 
