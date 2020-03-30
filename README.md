@@ -147,7 +147,6 @@ you can follow the instructions in this URL to install Jupyterhub on k8s
 ```
 https://github.com/opslounge/jupyterhub
 ```
-```
 
 ## Authors
 
