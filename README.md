@@ -48,6 +48,23 @@ https://support.purestorage.com/linktopractices
 Multi step process first round you will install all applcations not requiring stateful storage
 https://readthedocs.d2iq.com/instructions
 
+Set values to false before running konvoy up
+
+```
+    - name: elasticsearch
+      enabled: false
+    - name: elasticsearch-curator
+      enabled: false
+    - name: elasticsearchexporter
+      enabled: false
+    - name: external-dns
+      enabled: false
+    - name: prometheus
+      enabled: false
+    - name: prometheusadapter
+      enabled: false
+```
+
 
 ### Deploying PSO
 
@@ -113,25 +130,36 @@ git clone https://github.com/opslounge/PSO.git
 Deploy Wordpress
 Observe binding applications
 
+
+### Konvoy Step 2 add on components
+
+edit the cluster.yaml to install the remaining components using Flashblade for storage
+Set values to true before running konvoy up 
 ```
-Deploy Add on Konvoy components
+    - name: elasticsearch
+      enabled: true
+    - name: elasticsearch-curator
+      enabled: true
+    - name: elasticsearchexporter
+      enabled: true
+    - name: external-dns
+      enabled: true
+    - name: prometheus
+      enabled: true
+    - name: prometheusadapter
+      enabled: true
 ```
 
-edit the cluster.yaml and set true the remaining items that need storage
-prometheus
-elstatic
-etc
-
-```
-Deploy Jupyterhub
-```
+### Deploy Jupyterhub
 
 clone the following repo
+```
 https://github.com/opslounge/jupyterhub.git
-
+```
 you can follow the instructions in this URL to install Jupyterhub on k8s
+```
 https://github.com/opslounge/jupyterhub
-
+```
 
 ## Running the tests
 
