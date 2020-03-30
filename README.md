@@ -1,15 +1,12 @@
 # d2iq-install-pso
 
-One Paragraph of project description goes here
-This page details the install steps used to install Jupyter notebook using jupyterhub for Kubernetes. to work with Flashblade and using PSO for 
-provisioning
+Build Jupyter as a service on Flashblade 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-These instructions will get you to a working installation of Jupyterhub on D2iq's Konvoy platform using PSO for storage provisioning and using all
+These instructions will get you to a working installation of Jupyterhub on 
+D2iq's Konvoy platform using PSO for storage provisioning and using all
 storage on Pure Flash Blade
-
 
 ### Prerequisites
 
@@ -27,46 +24,26 @@ Ideally you will have your Flash Blade data VIPS on a dedicated storage VLAN if 
 
 ### Installing
 
-A step by step series of examples that tell you how to get your environment up and running
-
-Start with 7 nodes connected to flashblade
-3 for mangement access API calls 
-4 for storage related calls
-
 you can use the following playbooks to prep each host. 
 ```
 git clone https://github.com/opslounge/centosprep.git
 ```
+Refer to D2iq documentation for specifics around requirements based on your node types. 
+
+https://docs.d2iq.com/ksphere/konvoy/latest/install/
+
 
 ### Installing Flash Blade system
-
 
 Connect your Flashblade using these best practices
 https://support.purestorage.com/linktopractices
 
 
-
 ### Deploying Konvoy
 
-Multi step process first round you will install all applcations not requiring stateful storage
-https://readthedocs.d2iq.com/instructions
+Details on Konvoy install are contained here
+https://hackmd.io/XuoxvPGuTLeI9kpa9a1kSg?view
 
-Set values to false before running konvoy up
-
-```
-    - name: elasticsearch
-      enabled: false
-    - name: elasticsearch-curator
-      enabled: false
-    - name: elasticsearchexporter
-      enabled: false
-    - name: external-dns
-      enabled: false
-    - name: prometheus
-      enabled: false
-    - name: prometheusadapter
-      enabled: false
-```
 
 
 ### Deploying PSO
@@ -195,33 +172,18 @@ Give an example
 
 Add additional notes about how to deploy this on a live system
 
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Andy Parsons** - *Initial work* - [opslounge](https://github.com/opslounge)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
 
