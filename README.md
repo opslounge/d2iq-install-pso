@@ -1,7 +1,5 @@
 # d2iq-install-pso
 
-# Project Title
-
 One Paragraph of project description goes here
 This page details the install steps used to install Jupyter notebook using jupyterhub for Kubernetes. to work with Flashblade and using PSO for 
 provisioning
@@ -37,35 +35,63 @@ you can use the following playbooks to prep each host.
 https://github.com/opslounge/ansibleplaybooks...
 
 
-####Installing Flash Blade system
+### Installing Flash Blade system
 
 
 Connect your Flashblade using these best practices
 https://support.purestorage.com/linktopractices
 
 
-```
-Deploying Konvoy
-```
+
+### Deploying Konvoy
 
 Multi step process first round you will install all applcations not requiring stateful storage
 https://readthedocs.d2iq.com/instructions
 
-```
-Deploying PSO
-```
+
+### Deploying PSO
 
 Add the Pure storage repo 
+```
 helm repo add pure https://purestorage.github.io/helm-charts
-
+```
+```
 Update the repo
+```
+```
 helm repo update
-
+```
 Clone the help chart
+```
 git clone https://github.com/purestorage/helm-charts.git
+```
+
+*EXAMPLES
+```
+arrays:
+  FlashArrays:
+    - MgmtEndPoint: "1.2.3.4"
+      APIToken: "a526a4c6-18b0-a8c9-1afa-3499293574bb"
+      Labels:
+        rack: "22"
+        env: "prod"
+    - MgmtEndPoint: "1.2.3.5"
+      APIToken: "b526a4c6-18b0-a8c9-1afa-3499293574bb"
+  FlashBlades:
+    - MgmtEndPoint: "1.2.3.6"
+      APIToken: "T-c4925090-c9bf-4033-8537-d24ee5669135"
+      NfsEndPoint: "1.2.3.7"
+      Labels:
+        rack: "7b"
+        env: "dev"
+    - MgmtEndPoint: "1.2.3.8"
+      APIToken: "T-d4925090-c9bf-4033-8537-d24ee5669135"
+      NfsEndPoint: "1.2.3.9"
+      Labels:
+        rack: "6a"
+```
 
 Edit the Values file with your ARRAY variables
-sample file here
 
 Instal PSO
 ```
